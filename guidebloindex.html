@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="guideblostyle.css" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,500;0,600;0,700;1,200;1,300;1,500;1,600;1,700&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500;1,600&family=Barlow+Semi+Condensed:wght@300&family=Dancing+Script:wght@400;500;600;700&family=Lobster&family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200&family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Oswald:wght@300&family=Rajdhani:wght@300;400;500;600;700&family=Source+Serif+Pro&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <a href="restapi.html" class="nav2"style="font-size: 60px;
+    font-weight:bold;">←</a>
+  <section>
+    <div>
+      <h2>GUIDES</h2>
+      <br>
+      <br>
+      <h1>A guide to integrating with the Blogger API in your Java project using HTTP requests:</h1>
+
+      <ol>
+
+        <p>
+          <li>Create a Google Cloud Console project: Go to the Google Cloud Console <a
+              href="https://console.cloud.google.com/">(https://console.cloud.google.com/)</a>
+            Click on the "Create Project" button.Follow the prompts to create a new project.</li>
+
+          <li>Enable the Blogger API by navigating to the APIs & Services section and searching for "Blogger API". Once
+            you find it, click the "Enable" button.</li>
+
+          <li>Create a new OAuth 2.0 client ID by navigating to the Credentials section and clicking the "Create
+            credentials" button. Select "OAuth client ID" as the type of credentials to create.</li>
+
+          <li>Follow the prompts to configure your OAuth consent screen. Make sure to specify the correct authorized
+            domains and scopes for your application.</li>
+          <li>After you've configured your consent screen, you'll be prompted to create a client ID. Select "Desktop
+            app" as the application type and specify a name for your client ID.
+          <li>After you've created your client ID, download the JSON file that contains your client secrets. You'll need
+            this file to authenticate with the Blogger API.</li>
+          <li>In your Java code, create a new GoogleClientSecrets object using the JSON file you downloaded in the
+            previous step. </li>
+          </li>
+          <li>Create a new NetHttpTransport object and use it to create a new GoogleAuthorizationCodeFlow object. </li>
+
+          <li>Use the GoogleAuthorizationCodeFlow object to generate a new authorization URL. This URL will allow you to
+            request authorization from the user to access their Blogger account. </li>
+          <li>Redirect the user to the authorization URL and prompt them to grant access to your application.</li>
+
+          <li>After the user grants access, they'll be redirected back to your application with an authorization code.
+            Use this code to generate a new access token and refresh token. </li>
+          <li>
+            Use the Blogger.Builder class to create a new Blogger object. Set the access token and refresh token for the
+            Blogger object using the setAccessToken and setRefreshToken methods.</li>
+        </p>
+      </ol>
+    </div>
+  </section>
+</body>
+
+</html>

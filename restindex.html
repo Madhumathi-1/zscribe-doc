@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>API Documentation</title>
+  <link href="reststyle.css" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,500;0,600;0,700;1,200;1,300;1,500;1,600;1,700&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500;1,600&family=Barlow+Semi+Condensed:wght@300&family=Dancing+Script:wght@400;500;600;700&family=Lobster&family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200&family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Oswald:wght@300&family=Rajdhani:wght@300;400;500;600;700&family=Source+Serif+Pro&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <section class="center" id="container">
+    <h1>𝐑𝐄𝐒𝐓 𝐀𝐏𝐈</h1>
+    <br>
+  <p style="font-size: 23px;">𝐘𝐨𝐮 𝐜𝐚𝐧 𝐪𝐮𝐢𝐜𝐤𝐥𝐲 𝐚𝐜𝐜𝐞𝐬𝐬 𝐭𝐡𝐞 𝐟𝐞𝐚𝐭𝐮𝐫𝐞𝐬 𝐚𝐧𝐝 𝐟𝐮𝐧𝐜𝐭𝐢𝐨𝐧𝐚𝐥𝐢𝐭𝐢𝐞𝐬 𝐨𝐟 𝐨𝐮𝐫 𝐬𝐨𝐟𝐭𝐰𝐚𝐫𝐞 𝐰𝐢𝐭𝐡 𝐨𝐮𝐫 𝐫𝐨𝐛𝐮𝐬𝐭 𝐚𝐧𝐝 𝐮𝐬𝐞𝐫-𝐟𝐫𝐢𝐞𝐧𝐝𝐥𝐲 𝐑𝐄𝐒𝐓
+    𝐀𝐏𝐈 𝐭𝐡𝐚𝐭 𝐰𝐞 𝐡𝐚𝐯𝐞 𝐚𝐝𝐝𝐢𝐭𝐢𝐨𝐧𝐚𝐥𝐥𝐲 𝐜𝐫𝐞𝐚𝐭𝐞𝐝. 𝐓𝐡𝐢𝐬 𝐦𝐞𝐚𝐧𝐬 𝐭𝐡𝐚𝐭 𝐲𝐨𝐮 𝐜𝐚𝐧 𝐢𝐧𝐭𝐞𝐠𝐫𝐚𝐭𝐞 𝐙𝐒𝐜𝐫𝐢𝐛𝐞 𝐢𝐧𝐭𝐨 𝐲𝐨𝐮𝐫 𝐞𝐱𝐢𝐬𝐭𝐢𝐧𝐠 𝐰𝐨𝐫𝐤𝐟𝐥𝐨𝐰 𝐚𝐧𝐝
+    𝐰𝐫𝐢𝐭𝐢𝐧𝐠 𝐩𝐫𝐨𝐜𝐞𝐬𝐬.</p>
+    <p>To use the REST API, you will need to authenticate your requests using an access token. You can obtain an access
+      token by
+      contacting our support team</p>
+    <img class="img-tag"
+      src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_23-2149383348.jpg?w=1380&t=st=1677810181~exp=1677810781~hmac=9e2daa50b994003c9897cf4bb2113ff63bbe3ba43f791de3701ec12de65ee186">
+    <h2>Base URL:</h2>
+    <p>http://localhost:8130/ZScribeProject/</p>
+    <h2>Authentication:</h2>
+    <p>To implement authentication for bloggers and writers to create blog posts, you could use a username and password
+      system with role-based access control.</p>
+    <b style="font-size: 20px;">Here is a high-level overview of how this could work:</b>
+    <p>Create a database table to store user information, including their username, password (stored as a hash), and
+      role
+      (blogger or writer).</p>
+    <p>Create a login page where users can enter their username and password. When a user submits their credentials, the
+      server checks the database to verify their username and password. If the credentials are valid, the server
+      generates
+      a session token (e.g., a JWT) and returns it to the client.</p>
+    <p>When a user wants to create a blog post, they must first log in using their session token. The client includes
+      the
+      session token in the request headers, and the server verifies that the token is valid and identifies the user as a
+      blogger or writer.</p>
+    <p>If the user is a blogger, they are authorized to create a blog post. The client sends the blog post data to the
+      server, which saves it to the database and returns a success response.</p>
+    <p>If the user is a writer, the client sends the blog post data to the server for review. The server saves the blog
+      post in a pending state and notifies the blogger that a new post is waiting for review. The blogger can then log
+      in
+      and review the post, approving or rejecting it. If the post is approved, it is published to the blog.</p>
+
+    <h2>Endpoints:</h2>
+    <br>
+    <h3>POST /resource</h3>
+    <p>Description: Create a new blog post</p>
+    <h4>Parameters:</h4>
+    <ul>
+      <li>param1: title (required): The title of the blog post</li>
+      <li>param2: content (required): The content of the blog post</li>
+    </ul>
+    <!----------RRRR------->
+    <h4>Request Body:</h4>
+    <br>
+    <pre><code>
+    {
+  "title": "My Awesome Blog Post",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu tellus vel tellus pellentesque aliquet vel a arcu. Aenean vitae lorem odio.",
+ 
+}
+  </code></pre>
+    <!----------RRRR------->
+    <h4>Response:</h4><br>
+    <pre><code>
+      {
+  "id": 456,
+  "title": "My Awesome Blog Post",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu tellus vel tellus pellentesque aliquet vel a arcu. Aenean vitae lorem odio.",
+  "author_id": 123,
+  "created_at": "2023-03-03T10:15:00Z",
+  "updated_at": "2023-03-03T10:15:00Z"
+}
+      
+  </code></pre><br>
+    <h2>Our Api Request:</h2><br>
+    Here is a summary of the class methods and properties:
+
+    <li>url: The URL object to access the API.</li>
+    <li>httpsURLConnection: A HttpsURLConnection object to make a secure connection to the API.</li>
+    <li>scanner: A scanner to read the response from the API.</li>
+    <li>refreshTkn: A static string property that stores the refresh token.</li>
+    <li>accessTkn: A static string property that stores the access token.</li>
+    <li>clientID: A string property that stores the client ID of the application registered in the Zoho Developer
+      Console.</li>
+    <li>clientSecret: A string property that stores the client secret of the application registered in the Zoho
+      Developer Console.</li>
+    <li>code: A string property that stores the authorization code received from the Zoho Writer API.</li>
+    <li>isFirstToken: A boolean property to check whether it's the first time the application is requesting an access
+      token.</li>
+    <li>getCode(): A method to get the authorization code.</li>
+    <li>getClientSecret(): A method to get the client secret.</li>
+    <li>getClientID(): A method to get the client ID.</li>
+    <li>setAccessTkn(): A method to set the access token.</li>
+    <li>setRef_token(): A method to set the refresh token.</li>
+    <li>setCode(): A method to set the authorization code.</li>
+    <li>createAccessToken(): A method to create the access token by sending a POST request to the Zoho Writer API with
+      the authorization code. The response from the API is a JSON object containing the access token and refresh token,
+      which are then stored in the respective static properties.</li>
+    <br>
+
+    <h2>For Blogger:</h2>
+
+    <li><a href="https://accounts.zoho.com/oauth/v2/auth:"></a> This endpoint is used to initiate the authorization
+      process
+      by redirecting the user to a login page where they can grant access to the client application.</li>
+    <li><a href="https://accounts.zoho.com/oauth/v2/token: "></a>This endpoint is used to exchange an authorization code
+      for
+      an access token and refresh token.</li>
+    <li><a href="https://accounts.zoho.com/oauth/v2/revoke:"></a> This endpoint is used to revoke an access token or
+      refresh token.</li>
+    <li><a href="https://www.zohoapis.com/crm/v2/...:"></a> This endpoint (and others like it) is used to access various
+      resources in the Zoho CRM API, once an access token has been obtained.</li>
+
+    <pre>  Note that the specific endpoints and resources that are relevant to this code will depend on the specific
+      requirements of the application being developed.</pre>
+    <!-------------error-------------->
+    <br>
+    <h2>Error Codes:</h2>
+    <!----------RRRR------->
+    <h4>Request:</h4>
+    <p>POST https://oauth2.googleapis.com/token
+      Content-Type: application/x-www-form-urlencoded</p>
+    <pre>
+    <code>
+
+
+client_id=<YOUR_CLIENT_ID>
+&client_secret=<YOUR_CLIENT_SECRET>
+&redirect_uri=<YOUR_REDIRECT_URI>
+&code=<YOUR_AUTHORIZATION_CODE>
+&grant_type=authorization_code;
+
+  </code></pre>
+    <h4>Response:</h4>
+    <p>Invalid authorization code: Make sure that you are using the correct authorization code that was returned in
+      the
+      previous step of the OAuth2 flow. The authorization code is only valid for a short period of time, so make sure
+      you
+      are using it immediately.</p>
+    <pre><code>
+
+response: {
+    "error":"invalid_code"
+    }
+
+
+  </code></pre>
+    <!----------RRRR------->
+    <br>
+    <h2 style="font-size: 22px;">For Writer:</h2>
+    <h4>Request:</h4>
+    <p>GET https://writer.zoho.com/api/v1/documents?authtoken=YOUR_AUTH_TOKEN
+    </p>
+    <h4>Response:</h4>
+    <pre><code>
+    
+{
+    "error": {
+        "message": "OAuthtoken or OAuthspace seems to be invalid. Please try again with a valid token.",
+        "response_generated_time": 1677733104029,
+        "documentation_url": "https://www.zoho.com/writer/help/api/v1/general-errors.html",
+        "request_url": "https://writer.zoho.com/api/v1/documents",
+        "errorcode": "R5011"
+    }
+}
+  </code></pre>
+
+    <p>The error response indicates that the provided OAuth token or OAuth space is invalid. This error can occur when
+      the
+      OAuth token has expired or is incorrect, or when the OAuth space has been deleted or is incorrect.
+
+    </p>
+    <!----------RRRR------->
+    <h4>Request:</h4><br>
+    <p> Error responses typically indicate that a request made by a client was unsuccessful due to an error on the
+      server
+      or due to invalid client input. In this case, the error message suggests that the OAuth client used to make the
+      request was deleted. </p>
+    <h4>Response:</h4><br>
+    <pre><code>
+    {
+    "error": "deleted_client",
+    "error_description": "The OAuth client was deleted."
+}
+
+  </code></pre>
+    <p>To resolve this issue, the client may need to create a new OAuth client or update their existing OAuth client
+      configuration.</p>
+
+    <!----------RRRR------->
+    <h4>Request:</h4><br>
+    <p>The error message "invalid_client_secret" suggests that the client secret used for authentication is invalid or
+      incorrect. The client secret is a confidential code used by the client (e.g., an application) to authenticate
+      itself
+      to the authorization server.</p>
+    <h4>Response:</h4><br>
+    <pre><code>
+    {
+    "error": "invalid_client_secret"
+}
+  </code></pre>
+
+    <p>f the secret is incorrect or has been changed, the server cannot authenticate the client and returns an error.
+    </p>
+    <!----------RRRR------->
+    <h4>Request</h4><br>
+    <p>The error message indicates that the API request failed authentication. This could be due to various reasons
+      such
+      as missing or invalid credentials, expired access token, incorrect authentication method, etc.</p>
+    <h4>Response:</h4><br>
+    <pre><code>
+    {
+    "error": {
+        "message": "We failed to authenticate the API request. Please try with proper authentication.",
+        "response_generated_time": 1677733343062,
+        "documentation_url": "https://www.zoho.com/writer/help/api/v1/general-errors.html",
+        "request_url": "https://zohoapis.com/writer/api/v1/documents",
+        "errorcode": "R5013"
+    }
+}
+
+  </code></pre>
+    <p>To resolve this error, you should verify that the authentication details provided in the request are correct
+      and
+      valid.</p>
+    <!----------RRRR------->
+    <h4>Request</h4><br>
+    <p>This error message typically indicates that there was an issue with the authentication process. It could be due
+      to
+      an incorrect username or password, an expired authorization token, or other issues related to the authentication
+      flow.</p>
+    <h4>Response:</h4><br>
+    <pre><code>
+    {
+    "error": "invalid_grant",
+    "error_description": "Bad Request"
+}
+  </code></pre>
+    <p>To resolve this issue, you should check your authentication credentials and ensure that they are valid and
+      up-to-date. You may need to regenerate your authorization token or obtain a new set of credentials if necessary.
+    </p>
+    <!----------RRRR------->
+
+    <p>This error message suggests that the request made to the API did not contain valid authentication credentials.
+      Here
+      is an example of a request that includes a valid OAuth 2 access token:</p>
+    <h4>Request:</h4><br>
+    <pre><code>
+    GET /api/endpoint HTTP/1.1
+Host: api.example.com
+Authorization: Bearer ya29.a0ARrdaMnRc6Bw83lCLCJSpFJZ-abcdefghijklmno1234567890
+
+  </code></pre>
+    <h4>Response:</h4><br>
+    <pre><code>
+    {
+    "error": {
+        "code": 401,
+        "message": "Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+        "errors": [
+            {
+                "message": "Invalid Credentials",
+                "domain": "global",
+                "reason": "authError",
+                "location": "Authorization",
+                "locationType": "header"
+            }
+        ],
+        "status": "UNAUTHENTICATED"
+    }
+}
+  </code></pre>
+    <p>When the "Allow" button is clicked, it redirects the user to a Google authorization URL where the user will be
+      prompted to grant the application access to the specified scopes. The URL includes parameters such as the client
+      ID, response type, redirect URI, scope, and access type. Once the user grants access, they will be redirected back
+      to the application with an authorization code that can be exchanged for an access token.</p>
+    <img src="1(1).png">
+    <img src="2 (1).png" />
+    <p>This button is a link that navigates to a Zoho authorization page with some predefined parameters such as
+      response
+      type, client ID, scope, redirect URI, prompt and access type.</p>
+
+    <p>The purpose seems to be to provide a simple interface for users to authorize their Zoho accounts for accessing
+      some resource.</p>
+
+
+    <h4>Successful for Writer</h4><br>
+    <pre><code>
+      {"access_token":"Your Access Token",
+      "refresh_token":"Your Refresh Token",
+      "scope":"ZohoWriter.documenteditor.READ ZohoWriter.documenteditor.CREATE ZohoWriter.documenteditor.UPDATE ZohoWriter.documenteditor.DELETE",
+      "api_domain":"https://www.zohoapis.com",
+      "token_type":"Bearer",
+      "expires_in":3600}
+    </code></pre>
+    <!----------RRRR------->
+    <h4>Successful for Blogger</h4><br>
+    <pre><code>
+     {
+    "kind": "blogger#blog",
+    "id": "2399953",
+    "name": "Official Blogger Blog",
+    "description": "The latest tips and news from the Blogger team",
+    "published": "2007-04-23T15:17:29-07:00",
+    "updated": "2023-01-28T02:46:29-08:00",
+    "url": "http://blogger.googleblog.com/",
+    "selfLink": "https://www.googleapis.com/blogger/v3/blogs/2399953",
+    "posts": {
+        "totalItems": 541,
+        "selfLink": "https://www.googleapis.com/blogger/v3/blogs/2399953/posts"
+    },
+    "pages": {
+        "totalItems": 2,
+        "selfLink": "https://www.googleapis.com/blogger/v3/blogs/2399953/pages"
+    },
+    "locale": {
+        "language": "en",
+        "country": "",
+        "variant": ""
+    }
+}
+      
+    </code></pre>
+    <p>In this example, the Authorization header includes the access token, which is prefixed by the string "Bearer".
+      The
+      access token should be obtained through the OAuth 2 authentication flow, and will typically have an expiration
+      time.
+    </p>
+
+    <ul>
+      <li>User login failed.</li>
+      <li>400 Bad Request: Invalid request parameters.</li>
+      <li>401 Unauthorized: Authentication failed.</li>
+      <li>404 Not Found: Resource not found.</li>
+      <li>500 Internal Server Error: An error occurred on the server.</li>
+
+    </ul>
+  </section>
+
+</body>
+<script src="restscript.js"></script>
+
+</html>

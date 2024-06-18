@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writer Docs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="restapiwriterstyle.css" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,500;0,600;0,700;1,200;1,300;1,500;1,600;1,700&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500;1,600&family=Barlow+Semi+Condensed:wght@300&family=Dancing+Script:wght@400;500;600;700&family=Lobster&family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200&family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Oswald:wght@300&family=Rajdhani:wght@300;400;500;600;700&family=Source+Serif+Pro&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <nav class="nav-tag">
+      <div class="nav-page" style="margin-left: 20%;">
+
+
+        <ul class="ul-tag">
+          <li class="li-tag"><a href="writerguideindex.html">Guides</a></li>
+          <li class="li-tag"><a href="writerindex.html">Reference</a></li>
+          <!--           <li class="li-tag"><a href="https://contact.madhumathim.repl.co/">Help</a></li> -->
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section class="main-page">
+    <section>
+      <!-----Introduction for Writer ------------->
+      <br>
+      <br><br><br>
+      <h1>𝐇𝐨𝐰 𝐭𝐨 𝐠𝐞𝐭 𝐀𝐏𝐈 𝐚𝐜𝐜𝐞𝐬𝐬𝐭𝐨𝐤𝐞𝐧 𝐟𝐨𝐫 𝐙𝐨𝐡𝐨𝐖𝐫𝐢𝐭𝐞𝐫
+      </h1>
+      <p>Here are the general steps to use the Zoho Writer REST API:</p>
+      <ol>
+        <li><b>Create a Zoho Developer Account:</b> You will need to create a developer account with Zoho in order to
+          use
+          their
+          API. This will allow you to create a Zoho Writer Application, which you will use to authenticate your API
+          requests.</li>
+
+        <li><b>Create a Zoho Writer Application:</b> Once you have a developer account, you can create a Zoho Writer
+          Application in
+          the Zoho Developer Console. This will give you a set of API keys and access tokens that you will need to make
+          authenticated API requests.</li>
+        <li><b>Choose an API endpoint:</b> Zoho Writer offers a variety of REST API endpoints that you can use to
+          interact
+          with
+          Zoho Writer documents. Choose the endpoint that is appropriate for your use case.</li>
+        <li><b>Make an API request:</b> Using an HTTP client like cURL or a language-specific library, make an API
+          request
+          to the
+          Zoho Writer endpoint. Include your API key and access token in the request header for authentication.</li>
+        <li><b>Process the response:</b> The Zoho Writer API will return a response in a format like JSON or XML.
+          Process the
+          response in your application to extract the data you need.</li>
+        <li><b>Handle errors: </b>If there is an error with the API request, the Zoho Writer API will return an error
+          message.
+          Handle errors in your application to provide useful feedback to the user.</li>
+        <li><b>Iterate and improve:</b> As you continue to use the Zoho Writer API, iterate and improve your code to
+          make it
+          more
+          efficient and effective.Be sure to follow best practices for API usage, such as caching data to reduce the
+          number
+          of API requests.</li>
+      </ol>
+
+      <!------------------------------END -------------------------->
+
+      <!-----------------------------oAUTH REQUEST------------------>
+
+      <h2>𝐀𝐮𝐭𝐡𝐨𝐫𝐢𝐳𝐢𝐧𝐠 𝐎𝐀𝐮𝐭𝐡 𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐬 </h2>
+      <div class="author">
+        <div class="steps">
+          <p><a href="https://www.zoho.com/writer/help/api/v1/oauth-step1.html">Step 1: Register your application with
+              Zoho</a>
+
+          <p><a href="https://www.zoho.com/writer/help/api/v1/oauth-step2.html">Step 2: Authorization Request</a>
+
+          <p><a href="https://www.zoho.com/writer/help/api/v1/oauth-step3.html">Step 3: Generate Access and Refresh
+              Tokens</a>
+
+          <p><a href="https://www.zoho.com/writer/help/api/v1/oauth-step4.html">Step 4: Refresh your Access Tokens</a>
+
+          <p><a href="https://www.zoho.com/writer/help/api/v1/oauth-step5.html">Step 5: Revoke your Refresh Tokens</a>
+
+          </p>
+        </div>
+        <div>
+          <img class="img-tag"
+            src="https://img.freepik.com/free-vector/tiny-content-writers-creating-web-articles-flat-illustration_74855-15537.jpg?w=1380&t=st=1677568274~exp=1677568874~hmac=c40fc05e34c2fb910fb15f1096eb5f44abea51f1bdf12492e657a41341705b1e">
+        </div>
+      </div>
+
+
+      <!------------------------------STEP 1--------------------------->
+      <!--   <a href="mydiv"> -->
+      <div class="writer">
+
+        <b>
+          <h4>𝐒𝐭𝐞𝐩 𝟏:</h4>
+        </b>
+        <p>
+          Before you get started with authorization and make any calls using the Zoho Writer APIs, you need to register
+          your
+          application with Zoho Writer.
+          <!--     <br> -->
+          To register,
+
+          Go to <a href="https://api-console.zoho.com/">Zoho Developer Console.</a>
+          <!--     <img src="1st.png" class="center"> -->
+          <img src="https://www.zohowebstatic.com/sites/zweb/images/writer/register-application-1.png" class="center">
+        <p>Enter the following details:</p>
+        <ul>
+          <li>Client Name: The name of your application you want to register with Zoho.</li>
+          <li>Homepage URL: The URL of your web page.</li>
+          <li>Authorized Redirect URIs: A valid URL of your application to which Zoho Accounts redirects you with a
+            grant
+            token(code) after successful authentication.</li>
+
+        </ul>
+        <!--   <img src="2rd.png" class="center"> -->
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/writer/register-application-2.png" class="center">
+
+        <p>Click CREATE.</p>
+        <p>You will receive the following credentials:</p>
+        <ul>
+          <li>Client ID: The consumer key generated from the connected app.</li>
+          <li>Client Secret: The consumer secret generated from the connected app.</li>
+        </ul>
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/writer/register-application-3.png" class="center">
+        <!--   <img src="3rd.png" class="center"> -->
+
+
+        <p>Possible Errors:</p>
+        <table>
+          <tr>
+            <th>Error</th>
+            <th>Reason</th>
+            <th>Resolution</th>
+          </tr>
+          <tr>
+            <td>Enter a valid client name</td>
+            <td>The client name has a special character.</td>
+            <td>The client name must not contain any special characters except "_" and "&".</td>
+          </tr>
+          <tr>
+            <td>Enter a valid JavaScript Domain URI</td>
+            <td>The JavaScript domain is incorrect.</td>
+            <td>Specify valid JavaScript domains, separated by commas, and they must start with 'http'.</td>
+          </tr>
+          <tr>
+            <td>Enter a valid redirect URI</td>
+            <td>The redirect URI is incorrect.</td>
+            <td>Specify a valid redirect URI in the format "https://www.your-domain.com/callback".</td>
+          </tr>
+          <tr>
+            <td>Enter a valid homepage URL</td>
+            <td>The homepage URL is invalid.</td>
+            <td>Specify a valid homepage URL in the format "https://www.yourdomain.com".</td>
+          </tr>
+        </table>
+
+        <p>Go to Zoho Developer Console and log in with your Zoho Writer username and password.</p>
+
+      </div>
+
+
+      <!----------------------STEP 1 END---------------------->
+
+      <!----------------------STEP 2 START--------------------->
+      <b>
+        <h4>𝐒𝐭𝐞𝐩 𝟐:</h4>
+      </b>
+      <h1>Zoho Writer API Authentication</h1>
+      <p>To use the Zoho Writer APIs, the users must authenticate the application to make API calls on their behalf with
+        an access token.</p>
+      <p>The access token, in return, must be obtained from a grant token (authorization code). The Zoho Writer APIs use
+        the authorization code grant type to provide access to protected resources.</p>
+      <p>There are two ways in which you can generate the grant token based on the client type.</p>
+      <ul>
+        <li>Web-based application</li>
+
+      </ul>
+      <h2>Web-based Application</h2>
+      <p>Web-based applications are chosen when your application is used by multiple users and requires user
+        intervention
+        during authorization. For this client type, you must use redirection-based code generation. In this
+        authorization
+        flow,</p>
+      <ol>
+        <li>The user clicks the Login with Zoho button on any third-party web-based application.</li>
+        <li>The application redirects the user to the Zoho Login page, and the user enters the Zoho credentials.</li>
+        <li>HTTP Request Type: GET</li>
+        <li>The web application redirects the user to the Zoho OAuth server with the required scope in the Accounts URL:
+        </li>
+      </ol>
+      <img src="https://www.zohowebstatic.com/sites/zweb/images/writer/img1.png" class="center">
+      <div class="danger">
+        <p>
+          https://accounts.zoho.com/oauth/v2/auth?scope=ZohoWriter.documentEditor.ALL&client_id={client_id}&response_type=code&access_type={"offline"or"online"}&redirect_uri={redirect_uri}
+        </p>
+      </div>
+      <img src="https://www.zohowebstatic.com/sites/zweb/images/writer/ridirecturl.png" class="center">
+      <p>As you can see, the request URL has the parameters "scope", "client_id", "response_type", "access_type", and
+        "redirect_uri".</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Data Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>scope</td>
+            <td>String</td>
+            <td>Data that your application wants to access. Refer to Scopes for more details.</td>
+          </tr>
+          <tr>
+            <td>client_id</td>
+            <td>String</td>
+            <td>Client ID(consumer key) that you obtained during client registration.</td>
+          </tr>
+          <tr>
+            <td>redirect_uri</td>
+            <td>String</td>
+            <td>Callback URL that you specified during client registration.</td>
+          </tr>
+          <tr>
+            <td>response_type</td>
+            <td>String</td>
+            <td>Enter code (response_type = code).</td>
+          </tr>
+          <tr>
+            <td>access_type</td>
+            <td>String</td>
+            <td>Value can be 'offline' or 'online'. If the value is offline, you will receive a refresh token along with
+              an access token for the first time you make the request. Once the access token expires you can use the
+              refresh token to regenerate them. Whereas if the value is online, you will receive only an access token.
+            </td>
+          </tr>
+          <tr>
+            <td>prompt</td>
+            <td>String</td>
+
+            <td>If you forget your refresh token or cannot access it, use this parameter along with access_type to
+              receive a
+              new
+              refresh token.
+              <br>Value must be 'consent'. If this parameter is included in the query, every time you generate an OAuth
+              token,
+              the
+              user's consent approval will be mandatory.
+              <br>Example: To receive another refresh token, include access_type=offline and prompt=consent in your
+              authorization
+              request.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Based on the user's login details, the system automatically detects the user's domain and uses the
+        domain-specific
+        authentication URL to obtain the grant token (code).</p>
+
+      <div class="danger">
+        <p><strong>Note: </strong>Generating the grant token is a one-time process, provided you generate the access
+          and
+          refresh tokens within
+          the time the grant token is valid for.</p>
+      </div>
+
+
+      <!-------------------------------STEP2 END HERE----------------------->
+
+      <h4>𝐒𝐭𝐞𝐩 𝟑:</h4>
+      <div>
+        <p>To generate access and refresh tokens:</p>
+        <p>Make a POST request with the following URL. Replace {Accounts_URL} with your domain-specific Zoho accounts
+          URL
+          when you make the request.</p>
+        <p>{Accounts_URL}/oauth/v2/token</p>
+        <div class="danger">
+          <p><strong>Note:</strong> For security reasons, pass the below parameters in the body of your request.
+            <br>To invoke OAuth generation via <a href="https://blue-shuttle-788514.postman.co/home">Postman</a>, you
+            need
+            to
+            download and import the JSON files as listed below.
+          <ul>
+            <li>OAuth Generation JSON file</li>
+            <li>Environment JSON file</li>
+          </ul>
+          </p>
+        </div>
+
+        <p><strong>Request Parameters</strong></p>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Data Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>grant_type</td>
+              <td>String</td>
+              <td>Enter grant_type = authorization_code.</td>
+            </tr>
+            <tr>
+              <td>client_id</td>
+              <td>String</td>
+              <td>Your client_id that is found in Zoho Developer console.</td>
+            </tr>
+            <tr>
+              <td>client_secret</td>
+              <td>String</td>
+              <td>Your client_secret that is found in Zoho Developer console.</td>
+            </tr>
+            <tr>
+              <td>redirect_uri</td>
+              <td>String</td>
+              <td>The Callback URL that was provided during the App registration.</td>
+            </tr>
+            <tr>
+              <td>code</td>
+              <td>String</td>
+              <td>Specify the grant token generated in Step 2.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--[ Code Box 1 ]-->
+        <div class='K2_CBox'>
+          <div class='CB_Heading'>
+            <span><b>POST</b></span>
+            <button id='copy1' class='C_box_main' onclick="copyC('copy1','code1')">
+              <i style="font-size:24px" class="fa">&#xf0c5;</i>
+            </button>
+          </div>
+
+          <!--Add Your Parse HTML code Here-->
+          <div id='code1'>
+            <pre>https://accounts.zoho.com/oauth/v2/token?client_id=Your client id&client_secret=Your Client secret&grant_type=authorization_code&code=1000.30089c1d0bf22d8f4c859eeba34b8f9f.138943accac7cba88f17a54a7d5ef7e3;</pre>
+          </div>
+
+
+          <p>If the request is successful, you would receive the following:</p>
+
+          <pre>
+         {
+          "access_token": "1000.1e87c59d3c3ca38001b6fae5ff162c65.80b512cce4bcaf96a8009b094dce12cf",
+          "refresh_token": "1000.1ed625660f30413d2ee30342541c416e.9b517eac0faa7adfec408e362c5bfe3b",
+          "api_domain": "https://www.zohoapis.com",
+          "token_type": "Bearer",
+          "expires_in": 3600
+         }
+        </pre>
+        </div>
+
+        <p><strong>Response Parameters</strong></p>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>access_token</td>
+              <td>Access token to access ZohoWriter APIs</td>
+            </tr>
+            <tr>
+              <td>refresh_token</td>
+              <td>Used to obtain a new access token after the old one expires. A refresh token does not expire. The
+                maximum
+                number of allowed refresh tokens per account is 20. The 21st refresh token will replace the first
+                created
+                refresh token.</td>
+            </tr>
+            <tr>
+              <td>expires_in</td>
+              <td>Time in seconds after which the access token expires</td>
+            </tr>
+            <tr>
+              <td>api_domain</td>
+              <td>Domain name of the API. Use this domain in your requests to make API calls to Zoho Writer.</td>
+            </tr>
+            <tr>
+              <td>token_type</td>
+              <td>Type of token obtained. "Bearer" indicates this is an access token.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>This completes the authentication. Once your app receives the access token, send the token in your HTTP
+          authorization header to Zoho Writer API with the value "Zoho-oauthtoken {access_token}" for each endpoint
+          (for
+          each request).</p>
+
+        <p>Note</p>
+        <ul>
+          <li>Each access token is valid for only an hour and used only for the operations defined in the scope.</li>
+          <li>Refresh token does not expire. Use it to refresh access tokens when they expire.</li>
+          <li>You can only generate a maximum of five refresh tokens in a minute.</li>
+        </ul>
+
+        <p>You can save the refresh and access tokens and reuse them.</p>
+
+      </div>
+      <div>
+        <b>
+          <h4>𝐒𝐭𝐞𝐩 𝟒:</h4>
+        </b>
+        <p><b>Make a POST request with the following URL:</b></p>
+
+        <div class='K2_CBox'>
+          <div class='CB_Heading'>
+            <span><b>POST</b></span>
+            <button id='copy2' class='C_box_main2' onclick="copyC('copy2','code2')">
+              <i style="font-size:24px" class="fa">&#xf0c5;</i>
+
+            </button>
+          </div>
+          <div id='code2'>
+            <pre>https://accounts.zoho.com/oauth/v2/token?refresh_token=1000.1ed625660f30413d2ee30342541c416e.9b517eac0faa7adfec408e362c5bfe3b&client_id=Your Client id&client_secret=your client secret&grant_type=refresh_token</pre>
+          </div>
+          <p><b>If the request is successful, you would receive the following:</b></p>
+
+          <pre>
+
+          {
+          "access_token": "1000.e8a8c41261346ffbf25e03ec34a713d4.3e3062fe2ef416694365e27a5a0eeeb2",
+          "api_domain": "https://www.zohoapis.com",
+          "token_type": "Bearer",
+          "expires_in": 3600
+          }
+        </pre>
+
+          <div class="danger"><strong>
+              <h3>Note:</h3>
+            </strong>
+            <b>
+              <p>User Token Limits:</p>
+            </b>
+            <li>A "User" in an organization can have a maximum of 20 refresh tokens. And each refresh token can have a
+              maximum
+              of 30 active access tokens (non expired).</li>
+            <li>When a user creates a 31st access token, the system deletes the first created access token. Similarly,
+              when
+              the
+              user creates the 21st refresh token, the system deletes the first created refresh token.</li>
+            <p>You can only generate a maximum of five refresh tokens in a minute.</p>
+          </div>
+
+          <b>
+            <h4>𝐒𝐭𝐞𝐩 𝟓:</h4>
+          </b>
+          <h3>Getting Started</h3>
+          <div>
+            <p>Zoho Writer is an online word processor that lets users create, edit and format documents and work with
+              other
+              people simultaneously. We have now organized our APIs (Application Programming Interface) around REST,
+              so that
+              developers can integrate their existing apps or build new apps that can be integrated with Writer.</p>
+
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </section>
+
+</body>
+<script>
+  function copyC(btnId, codeId) {
+    const copyText = document.getElementById(codeId);
+    const range = document.createRange();
+    range.selectNode(copyText);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+
+    const copyBtn = document.getElementById(btnId);
+    const originalText = copyBtn.innerHTML;
+    copyBtn.innerHTML = "Copied!";
+    setTimeout(function () {
+      copyBtn.innerHTML = originalText;
+    }, 2000);
+  }
+
+</script>
+
+</html>
